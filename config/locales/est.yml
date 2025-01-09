@@ -1,0 +1,6 @@
+est:
+  hello: "Tere Päevast"
+
+  products:
+    index:
+      title: "Tooted"

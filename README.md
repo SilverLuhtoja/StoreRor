@@ -1,0 +1,35 @@
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+# Common commands:
+
+Generate model with name field:
+- rails generate model Product name:string
+
+Generate controller with method index:
+- rails generate controller Products index --skip-routes (skip adding routes to configuration)
+
+Run Migartion:
+- rails db:migrate (db:rollback to revert last migration)
