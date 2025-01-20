@@ -1,0 +1,24 @@
+.new_product {
+  width: 24rem;
+  height: 20rem;
+  background-color: lightgray;
+  border: 1px solid black;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 2fr 1fr;
+  align-items: center;
+}
+
+.product_container {
+  /* width: 16rem; */
+  height: 16rem;
+  background-color: rgb(231, 231, 231);
+  margin: 1rem;
+}
+
+.product_name {
+  padding: 0 1rem;
+  margin: auto;
+  background-color: rgb(180, 180, 180);
+}

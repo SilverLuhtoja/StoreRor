@@ -33,3 +33,10 @@ Generate controller with method index:
 
 Run Migartion:
 - rails db:migrate (db:rollback to revert last migration)
+
+
+# Work schedule:
+Total hours spent: 4
+
+- 14.01 [2h] - finishing mockUp 
+- 20.01 [2h] - Starting to work with mockup and implenting it, header styling

@@ -24,16 +24,16 @@ Rails.application.routes.draw do
   # get "/products/new", to: "products#new"
   # Processes the new form submission, handling errors and creating the record
   # post "/products", to: "products#create"
-  
+
   # Renders a specific record for viewing
   # get "/products/:id", to: "products#show"
-  
+
   #  Renders a form for updating a specific record
   # get "/products/:id/edit", to: "products#edit"
   # Handles the edit form submission, handling errors and updating the record
   # patch "/products/:id", to: "products#update"
   # put "/products/:id", to: "products#update"
-  
+
   # Handles deleting a specific record
   # delete "/products/:id", to: "products#destroy"
 

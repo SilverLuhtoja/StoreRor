@@ -8,3 +8,23 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  /* max-width: 1024px; */
+  max-width: 50%;
+  margin: auto;
+}
+
+section.product {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+section.product img {
+  border-radius: 8px;
+  flex-basis: 50%;
+  max-width: 50%;
+}

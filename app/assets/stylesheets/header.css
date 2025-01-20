@@ -1,0 +1,50 @@
+header {
+    background: #eee;
+    display: grid;
+    grid-template-rows: auto auto; 
+  }
+  
+  nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background: #bbb;
+    padding: 1rem;
+  }
+  
+  .logo {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo img {
+    width: 6rem;
+  }
+  
+  .links {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    background: #fff;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: black;
+    min-width: 6rem;
+    text-align: center;
+  }
+  
+  .intro_text {
+    padding: 3rem 6rem;
+  }
+  
+  .intro_text h3 {
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+  
