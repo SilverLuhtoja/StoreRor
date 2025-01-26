@@ -2,6 +2,7 @@
 
 <%= link_to "New product", new_product_path if authenticated? %>
 
+<% if false %>
 <div id="products">
     <% @products.each do |product| %>
     <div>
@@ -9,12 +10,6 @@
     </div>
     <% end %>
 </div>
+<% end %>
 
-<section class="new_product">
-    <div class="product_container">
-    </div>
-
-    <div class="product_name">
-        <h1>product name</h1>
-    </div>
-</section>
+<%= render "product_display" %>

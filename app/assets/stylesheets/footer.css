@@ -1,0 +1,19 @@
+footer {
+  margin-top: 5rem;
+  background: gray;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: 4rem;
+  margin-bottom: -1rem;
+}
+
+.contact_details .contact:nth-child(2) {
+  margin-top: 3rem;
+}
+
+.contact_details,
+.footer_links {
+  padding: 2rem;
+  font-size: 1.25rem;
+  line-height: 0.5rem;
+}

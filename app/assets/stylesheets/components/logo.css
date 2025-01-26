@@ -1,0 +1,13 @@
+  .logo {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 1rem;
+    max-width: 10rem;
+  }
+  
+  .logo img {
+    width: 6rem;
+    height: 6rem;
+  }
+  
