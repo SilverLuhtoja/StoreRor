@@ -11,3 +11,20 @@
     height: 6rem;
   }
   
+
+  /* MOBILE */
+@media screen and (max-width: 600px) {
+  .logo {
+    display: flex;
+    justify-items: center;
+  }
+  
+  .logo h1{
+    font-size: 1.15rem;
+  }
+
+  .logo img {
+    width: 4rem;
+    height: 4rem;
+  }
+}

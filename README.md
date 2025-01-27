@@ -39,8 +39,9 @@ Kill servers:
 
 
 # Work schedule:
-Total hours spent: 4
+Total hours spent: around 7
 
 - 14.01 [2h] - finishing mockUp 
 - 20.01 [2h] - Starting to work with mockup and implenting it, header styling
 - 26.01 [2h] - working on visuals
+- 26.01 [~1h] - mobile visuals

@@ -4,7 +4,6 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   gap: 4rem;
-  margin-bottom: -1rem;
 }
 
 .contact_details .contact:nth-child(2) {
