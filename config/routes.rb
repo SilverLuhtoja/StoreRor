@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "landing_page/index"
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,7 +18,9 @@ Rails.application.routes.draw do
 
   # ---------------------------------------------------------------------
   # Shows all the records
-  root "products#index"
+  # root "products#index"
+  root "landing_page#index"
+
   # get "/products", to: "products#index"
 
   # Renders a form for creating a new record

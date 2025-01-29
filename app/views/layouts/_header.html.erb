@@ -6,18 +6,10 @@
              <%= link_to "Products", root_path %>
              <%= link_to "Contact Us", root_path %>
              <%= link_to "About", root_path %>
+             <%= link_to "New product", new_product_path if authenticated? %>
 
              <%#= link_to "Login", new_session_path unless authenticated? %>
              <%#= button_to "Log out", session_path, method: :delete if authenticated? %>
          </div>
      </nav>
-
-     <div class="intro_text">
-         <h1>Gift beautifully crafted unique berry to you relative and its guaranteed they respond with a big smile!</h1>
-
-         <h3>
-             One stop place to pick your most unigue gift ideas. Handmade and packaged to suit your needs. We are constantly updating
-             our stocks with new things. We are open to work together to make perfect gift that you need.
-         </h3>
-     </div>
  </header>

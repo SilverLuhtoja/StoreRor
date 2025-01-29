@@ -44,4 +44,47 @@ Total hours spent: around 7
 - 14.01 [2h] - finishing mockUp 
 - 20.01 [2h] - Starting to work with mockup and implenting it, header styling
 - 26.01 [2h] - working on visuals
-- 26.01 [~1h] - mobile visuals
+- 27.01 [~1h]- mobile visuals
+- 29.01 [~2h] - implementing some rendering logic and work list creation
+
+
+
+What to do: 
+[INFRASTRUCTURE]:
+1. Domain name and DNS setup
+2. Certificate creation
+
+[LOGO]:
+Create Logo and name
+
+[Pages]:
+1. About page
+2. Other important pages frame
+    * Buying information
+    * Delivery infromation
+    * Terms & conditions
+3. Filled out information for each other page
+    * Buying information - when delivered etc..
+    * Delivery infromation - choices for delivery, etc..
+    * Terms & conditions - overall conditions
+
+[Products]:
+1. Update product record to include, price, small description, bigger description, should include pictures
+2. Update product_display with new data:
+    * Shows display picture, when hovered changes to different picture with small zoom
+3. Create easy product editing section [create,update,delete]
+    * must be possible only for admin
+    * possible add multiple pictures at once:
+        * How to choose displayed product picture ( first one or extra marked )
+        * pictures should be dropable to box
+        * where should those pictures be saved and what is the fastest option for client
+    * should be hidden and not part of front html
+4. When clicked on moreInfo btn, transfers to different page or larges section.
+ 
+[SHOPING-CART]
+1. Showing products / total
+2. Choosing delivery method
+3. Agreeing with terms & conditions, continue only when agreed (should I save some data, incase for later)
+4. Asking email to send bill and having product data
+5. Payments & transactions => saving if succeeded
+6. Redirect to thank you page

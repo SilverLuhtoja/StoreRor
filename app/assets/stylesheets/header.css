@@ -28,29 +28,3 @@ nav {
   text-align: center;
 }
 
-.intro_text {
-  padding: 3rem 6rem;
-}
-
-.intro_text h3 {
-  font-size: 1.25rem;
-  font-weight: 100;
-}
-
-
-/* MOBILE */
-@media screen and (max-width: 600px) {
-  nav{
-    grid-template-columns: auto;
-    place-items: center;
-  }
-  .links {
-    display: none;
-  }
-
-  .intro_text {
-    padding: 2rem;
-    text-align: center;
-    font-size: var(--mobile-font-size);
-  }
-}
