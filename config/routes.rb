@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "pages#landing"
+  get "pages/about"
   get "landing_page/index"
   resource :session
   resources :passwords, param: :token
@@ -18,8 +20,7 @@ Rails.application.routes.draw do
 
   # ---------------------------------------------------------------------
   # Shows all the records
-  # root "products#index"
-  root "landing_page#index"
+  get "/about", to: "pages#about"
 
   # get "/products", to: "products#index"
 

@@ -54,6 +54,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # reload page on save
+  gem "hotwire-livereload"
 end
 
 group :test do

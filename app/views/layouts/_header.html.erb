@@ -1,15 +1,17 @@
  <header>
      <nav>
-        <%= render "layouts/components/logo" %>
+         <%= render "layouts/components/logo" %>
          <div class="links">
              <%= link_to "Home", root_path %>
              <%= link_to "Products", root_path %>
              <%= link_to "Contact Us", root_path %>
-             <%= link_to "About", root_path %>
+             <%= link_to "About", about_path %>
              <%= link_to "New product", new_product_path if authenticated? %>
 
-             <%#= link_to "Login", new_session_path unless authenticated? %>
-             <%#= button_to "Log out", session_path, method: :delete if authenticated? %>
+             <button>
+                 <%= link_to "Login", new_session_path unless authenticated? %>
+             </button>
+             <%= button_to "Log out", session_path, method: :delete if authenticated? %>
          </div>
      </nav>
  </header>
