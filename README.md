@@ -37,19 +37,6 @@ Run Migartion:
 Kill servers:
 - kill -9 pid_id
 
-
-# Work schedule:
-Total hours spent: around 7
-
-- 14.01 [2h] - finishing mockUp 
-- 20.01 [2h] - Starting to work with mockup and implenting it, header styling
-- 26.01 [2h] - working on visuals
-- 27.01 [~1h]- mobile visuals
-- 29.01 [~2h] - implementing some rendering logic and work list creation
-- 31.01 [~1h] - changing controller to single controller, adding about page routing and page, adding HotReload to project
-
-
-
 What to do: 
 [INFRASTRUCTURE]:
 1. Domain name and DNS setup

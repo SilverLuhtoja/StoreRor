@@ -3,6 +3,10 @@
     <% @products.each do |product| %>
     <section class="new_product">
         <div class="product_container">
+            <div class="image_container">
+                <%= image_tag "display_shop_item.jpg" %>
+                <%= image_tag "display_shop_hover.jpeg" %>
+            </div>
             <div class="cart_btn">
                 <h2>$ <%= product.id %></h2>
             </div>
