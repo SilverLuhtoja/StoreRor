@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  allow_unauthenticated_access only: %i[ index show ]
+  allow_unauthenticated_access only: %i[ index show modal]
 
   before_action :set_product, only: %i[ show edit update destroy] # runs before any action method is executed
 
@@ -37,6 +37,11 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to products_path
+  end
+
+  def modal
+    @product = Product.find(params[:id])
+    render partial: "product_modal", locals: { product: @product }
   end
 
   private

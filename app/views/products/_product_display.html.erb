@@ -1,7 +1,7 @@
 <section class="products_wrapper">
     <%# 5.times do %>
     <% @products.each do |product| %>
-    <section class="new_product">
+    <section class="new_product" data-id="<%= product.id %>">
         <div class="product_container">
             <div class="image_container">
                 <%= image_tag "display_shop_item.jpg" %>
@@ -24,3 +24,42 @@
     </section>
     <% end %>
 </section>
+
+
+<script>
+    products = document.querySelectorAll(".new_product")
+    products.forEach(product => {
+        product.addEventListener('click', () => {
+            var productId = product.getAttribute("data-id");
+
+            fetch('/products/' + productId + '/modal')
+                .then(response => response.text())
+                .then(html => {
+                    // Remove any existing modal
+                    var existingModal = document.getElementById("productModal");
+                    if (existingModal) {
+                        existingModal.remove();
+                    }
+
+                    // Append the rendered partial to the body
+                    document.body.insertAdjacentHTML("beforeend", html);
+
+                    // Display the modal
+                    var modal = document.getElementById("productModal");
+                    modal.style.display = "block";
+
+                    // Close on clicking the close button
+                    modal.querySelector(".close").addEventListener("click", function() {
+                        modal.remove();
+                    });
+
+                    // Close if clickin1g outside the modal content
+                    window.addEventListener("click", function(event) {
+                        if (event.target === modal) {
+                            modal.remove();
+                        }
+                    });
+                })
+        })
+    });
+</script>
