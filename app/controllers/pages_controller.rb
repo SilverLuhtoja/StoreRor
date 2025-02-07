@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  allow_unauthenticated_access only: %i[ landing about]
+  allow_unauthenticated_access only: %i[ landing about information shopcart]
 
   def landing
   introTexts = ["Surprise your loved ones with beautifully crafted, unique berries—guaranteed to bring a big smile!",
@@ -16,5 +16,12 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def information
+  end
+
+  def shopcart
+    @orders = [1,2,3,4,5,6]
   end
 end

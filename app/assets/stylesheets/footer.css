@@ -16,3 +16,14 @@ footer {
   font-size: 1.25rem;
   line-height: 0.5rem;
 }
+
+.footer_links a{
+  display: block;
+  height: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.footer_links a:hover{
+  color: rgb(116, 27, 27);
+}

@@ -5,11 +5,12 @@ header {
 }
 
 nav {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   background: #bbb;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .links {
@@ -28,3 +29,15 @@ nav {
   text-align: center;
 }
 
+.links a:hover{
+  color: rgb(116, 27, 27);
+  letter-spacing: 0.05rem;
+}
+
+.shopcart{
+  position: absolute;
+  background: rgb(104, 221, 104);
+  padding: 1rem;
+  right: 0;
+  top: 7rem;
+}

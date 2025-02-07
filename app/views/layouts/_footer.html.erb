@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <div class="contact_details">
         <%= render "layouts/components/logo" %>
 
@@ -9,11 +9,11 @@
             <p> Email: myStoreName@gmail.com</p>
         </div>
     </div>
-     <div class="footer_links">
-        <p> Products</p>
-        <p> Buying information</p>
-        <p> Delivery information</p>
-        <p> Terms & Conditions</p>
-        <p> Return policy</p>
+    <div class="footer_links">
+        <%= link_to "Products", root_path(anchor: "products") %>
+        <%= link_to "Buying information", information_path(anchor: "buying_info") %>
+        <%= link_to "Delivery information", information_path(anchor: "delivery_info") %>
+        <%= link_to "Terms & Conditions", information_path(anchor: "terms_info") %>
+        <%= link_to "Return policy", information_path(anchor: "return_info") %>
     </div>
 </footer>

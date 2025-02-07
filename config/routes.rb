@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "pages#landing"
-  get "pages/about"
-  get "landing_page/index"
+  get "/about", to: "pages#about"
+  get "/information", to: "pages#information"
+  get "/shopcart", to: "pages#shopcart"
+
   resource :session
   resources :passwords, param: :token
 
@@ -22,8 +24,6 @@ Rails.application.routes.draw do
 
   # ---------------------------------------------------------------------
   # Shows all the records
-  get "/about", to: "pages#about"
-
   # get "/products", to: "products#index"
 
   # Renders a form for creating a new record

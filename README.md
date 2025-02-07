@@ -31,6 +31,9 @@ Generate model with name field:
 Generate controller with method index:
 - rails generate controller Products index --skip-routes (skip adding routes to configuration)
 
+Destory generated resources:
+- rails destroy controller Products
+
 Run Migartion:
 - rails db:migrate (db:rollback to revert last migration)
 
@@ -46,12 +49,13 @@ What to do:
 Create Logo and name
 
 [Pages]:
-1. About page
-2. Other important pages frame
+1. ~~About page~~
+2. ~~Other important pages frame~~
     * Buying information
     * Delivery infromation
     * Terms & conditions
 3. Filled out information for each other page
+    * About page
     * Buying information - when delivered etc..
     * Delivery infromation - choices for delivery, etc..
     * Terms & conditions - overall conditions
@@ -61,16 +65,17 @@ Create Logo and name
 2. Update product_display with new data:
     * Shows display picture, when hovered changes to different picture with small zoom
 3. Create easy product editing section [create,update,delete]
-    * must be possible only for admin
+    * must be possible only for admin (should be hidden and not part of front html)
     * possible add multiple pictures at once:
         * How to choose displayed product picture ( first one or extra marked )
         * pictures should be dropable to box
         * where should those pictures be saved and what is the fastest option for client
-    * should be hidden and not part of front html
 4. When clicked on moreInfo btn, transfers to different page or larges section.
  
 [SHOPING-CART]
-1. Showing products / total
+
+
+1. Showing products / total (refreshing, vaigating or leaving from page needs to remember orders)
 2. Choosing delivery method
 3. Agreeing with terms & conditions, continue only when agreed (should I save some data, incase for later)
 4. Asking email to send bill and having product data
