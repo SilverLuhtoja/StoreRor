@@ -22,6 +22,16 @@ class PagesController < ApplicationController
   end
 
   def shopcart
-    @orders = [1,2,3,4,5,6]
+    @orders = [
+      create_product("L6ikelaud (Koer)", "40x30", 35),
+      create_product("Puu alus (CustomGraving)", "20x20", 10),
+      create_product("Tassi alus (Bird&Tree)", "10x10", 5)
+    ]
+
+    @total_sum = @orders.sum { |order| order[:price].to_i }
+  end
+
+  def create_product(name, size, price)
+    return {"name": name, "size": size, "price": price}
   end
 end

@@ -1,8 +1,27 @@
 <h1>ShopCart</h1>
 
-<h3>Current orders:</h3>
+<h3>ORDERS OVERVIEW:</h3>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Size</th>
+        <th>Price</th>
+    </tr>
+    <% @orders.each do |product| %>
+    <tr>
+        <td> <%= product[:name] %> </td>
+        <td> <%= product[:size] %> </td>
+        <td> <%= product[:price] %> </td>
+    </tr>
+    <% end %>
+    <tr>
+        <td></td>
+        <td> <b>Total</b> </td>
+        <td> <%= @total_sum %> </td>
+    </tr>
+</table>
 
-<% @orders.each do |product| %>
-    <p> Order:</p>
-    <%= product %>
-<% end %>
+<h3>DELIVERY METHOD:</h3>
+<h3>AGREE TERMS & CONDITIONS:</h3>
+<h3>EMAIL TO SEND ORDERS AND BILLING INFORMATION:</h3>
+<h3>CHOOSING PAYMENT METHOD AND PAYMENT:</h3>
