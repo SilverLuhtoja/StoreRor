@@ -6,7 +6,8 @@
             <%= link_to "Products", root_path(anchor: "products") %>
             <%= link_to "Contact Us", root_path(anchor: "footer") %>
             <%= link_to "About", about_path %>
-            <%= link_to "New product", new_product_path if authenticated? %>
+            <%#= link_to "New product", new_product_path if authenticated? %>
+            <%= link_to "New product", new_product_path %>
             <div class="shopcart">
                 <%= link_to "SHOPCART", shopcart_path %>
             </div>

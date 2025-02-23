@@ -73,8 +73,6 @@ Create Logo and name
 4. When clicked on moreInfo btn, transfers to different page or larges section.
  
 [SHOPING-CART]
-
-
 1. Showing products / total (refreshing, vaigating or leaving from page needs to remember orders)
 2. Choosing delivery method
 3. Agreeing with terms & conditions, continue only when agreed (should I save some data, incase for later)

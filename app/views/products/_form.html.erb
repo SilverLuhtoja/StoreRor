@@ -1,21 +1,113 @@
-<%= form_with model: product do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
- <div>
-    <%= form.label :featured_image, style: "display: block" %>
-    <%= form.file_field :featured_image, accept: "image/*" %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
-  </div>
+<div class="product_form">
+    <%= form_with model: product do |form| %>
+    <div class="flex product_form_name">
+        <%= form.label :product_name %>
+        <%= form.text_field :product_name %>
+    </div>
 
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    NEEDS OPTIONS ID for selection options (possibly show which ones are choosen)
+    <div class="product_form_featured_image">
+        <%= form.label :featured_images, style: "display: block" %>
+        <div class="flex">
+            <div id="dropBox" class="image_drop_box" style="border:2px dashed #ccc; padding:20px; text-align:center;">
+                <p>Drag and drop images here, or click to select</p>
+                <%= form.file_field :featured_images, accept: "image/*", multiple: true, style: "display:none;" %>
+                <span id="file-info" style="margin-left: 10px;"></span>
+            </div>
+            <div id="preview-container" class="flex" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <div class="flex product_form_short_description">
+        <%= form.label :short_description, style: "display: block" %>
+        <%= form.text_area :short_description %>
+    </div>
+
+    <div>
+        <%= form.label :long_description, style: "display: block" %>
+        <%= form.rich_text_area :long_description %>
+    </div>
+
+
+    <div class="product_create_btn">
+        <button>
+            IMPLEMENT PREVIEW WINDOW (MODAL WINDOW)
+        </button>
+    </div>
+
+    <div class="product_create_btn">
+        <%= form.submit %>
+    </div>
+    <% end %>
+</div>
+
+<script>
+    const dropBox = document.getElementById('dropBox');
+    const fileInput = dropBox.querySelector('input[type="file"]');
+    const fileInfo = document.getElementById('file-info');
+    const previewContainer = document.getElementById('preview-container');
+
+    // Clicking the box triggers the file input.
+    dropBox.addEventListener('click', function() {
+        fileInput.click();
+    });
+
+    // Update previews when files are selected through the dialog.
+    fileInput.addEventListener('change', function() {
+        displayFiles(fileInput.files);
+    });
+
+    // Prevent default behaviors for drag events.
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropBox.addEventListener(eventName, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    });
+
+    // Highlight the drop box on dragover.
+    dropBox.addEventListener('dragover', function() {
+        dropBox.classList.add('highlight');
+    });
+
+    // Remove highlight when dragging leaves.
+    dropBox.addEventListener('dragleave', function() {
+        dropBox.classList.remove('highlight');
+    });
+
+    // Handle dropped files.
+    dropBox.addEventListener('drop', function(e) {
+        dropBox.classList.remove('highlight');
+        const files = e.dataTransfer.files;
+        fileInput.files = files; // Optional: sync dropped files with the file input.
+        displayFiles(files);
+    });
+
+    function displayFiles(files) {
+        previewContainer.innerHTML = "";
+        if (files.length > 0) {
+            fileInfo.textContent = files.length + " file(s) selected";
+            Array.from(files).forEach(function(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const container = document.createElement("div");
+                    const name = document.createElement("p");
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.style.width = "160px";
+                    img.style.height = "120px";
+                    img.style.marginRight = "10px";
+                    // previewContainer.appendChild(img);
+
+                    name.innerText = file.name.split(".")[0]
+
+                    container.appendChild(img)
+                    container.appendChild(name)
+                    previewContainer.appendChild(container);
+                }
+                reader.readAsDataURL(file);
+            });
+        }
+    }
+</script>
