@@ -1,0 +1,23 @@
+<h1>Modal Index</h1>
+
+<%= link_to "new option", new_option_path %>
+
+<div class="flex">
+    <% @options.each do |option|%>
+    <div class="single_option_item">
+        <%= render(DeleteButtonComponent.new(resource: option)) %>
+        <div class="flex">
+            <h3> name: <%= option.name %> [<%= option.width %> x <%= option.height %> ]</h3>
+        </div>
+        <div class="flex">
+            image_url: <%= option.image_url %>
+            <%= image_tag option.image if option.image.attached? %>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<%if false%>
+New Option:
+<%= render "form", option: @option %>
+<%end%>

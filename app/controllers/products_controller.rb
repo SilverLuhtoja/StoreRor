@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  allow_unauthenticated_access only: %i[ index show modal]
+  # allow_unauthenticated_access only: %i[ index show modal]
+  # TODO: SWITCH LATER
+  allow_unauthenticated_access only: %i[ index show modal create new]
 
   before_action :set_product, only: %i[ show edit update destroy] # runs before any action method is executed
 

@@ -1,0 +1,48 @@
+<%= form_with model: option do |form| %>
+
+<% if option.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(option.errors.count, "error") %> prohibited this option from being saved:</h2>
+
+    <ul>
+        <% option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+<div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+</div>
+
+<div>
+    <%= form.label :width %>
+    <%= form.text_field :width %>
+</div>
+
+<div>
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+</div>
+
+<div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+</div>
+
+<% if false %>
+<div class="flex">
+    <div id="dropBox" class="image_drop_box" style="border:2px dashed #ccc; padding:20px; text-align:center;">
+        <p>Drag and drop images here, or click to select</p>
+        <%= form.file_field :featured_images, accept: "image/*", multiple: true, style: "display:none;" %>
+        <span id="file-info" style="margin-left: 10px;"></span>
+    </div>
+    <div id="preview-container" class="flex" style="margin-top: 10px;"></div>
+</div>
+<%end%>
+
+<div class="field">
+    <%= form.submit %>
+</div>
+<% end %>

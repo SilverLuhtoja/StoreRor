@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   get "/information", to: "pages#information"
   get "/shopcart", to: "pages#shopcart"
 
+  # ADMIN PAGE CONTENT
+  get "/admin", to: "pages#admin"
+  resources :products
+  resources :options
+
   resource :session
   resources :passwords, param: :token
 
@@ -44,5 +49,4 @@ Rails.application.routes.draw do
   # delete "/products/:id", to: "products#destroy"
 
   # SHORT HAND FOR ALL ABOVE
-  resources :products
 end

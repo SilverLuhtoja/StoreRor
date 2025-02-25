@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  allow_unauthenticated_access only: %i[ landing about information shopcart]
+  allow_unauthenticated_access only: %i[ landing about information shopcart admin ]
 
   def landing
   introTexts = ["Surprise your loved ones with beautifully crafted, unique berries—guaranteed to bring a big smile!",
@@ -33,5 +33,9 @@ class PagesController < ApplicationController
 
   def create_product(name, size, price)
     return {"name": name, "size": size, "price": price}
+  end
+
+  def admin
+    @options = Option.all
   end
 end
