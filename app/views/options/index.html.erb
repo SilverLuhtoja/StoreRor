@@ -1,4 +1,4 @@
-<h1>Modal Index</h1>
+<h1>OPTIONS</h1>
 
 <%= link_to "new option", new_option_path %>
 
@@ -9,9 +9,9 @@
         <div class="flex">
             <h3> name: <%= option.name %> [<%= option.width %> x <%= option.height %> ]</h3>
         </div>
-        <div class="flex">
-            image_url: <%= option.image_url %>
+        <div class="flex-column">
             <%= image_tag option.image if option.image.attached? %>
+            <h4> image_url: <%= option.image_url %> </h4>
         </div>
     </div>
     <% end %>

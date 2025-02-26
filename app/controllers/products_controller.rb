@@ -14,14 +14,16 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @options = Option.all
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to @product
+      redirect_to :root
     else
-      render :new, status: :unprocessable_entity
+      # render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -52,6 +54,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.expect(product: [ :name, :description, :featured_image ])
+      params.require(:product).permit(:name, :width, :height, :featured_image, option_ids: [])
     end
 end

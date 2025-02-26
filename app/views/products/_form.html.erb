@@ -1,8 +1,30 @@
 <div class="product_form">
     <%= form_with model: product do |form| %>
+    <% if product.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <ul>
+            <% product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+
     <div class="flex product_form_name">
-        <%= form.label :product_name %>
-        <%= form.text_field :product_name %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class="flex product_form_name">
+        <%= form.label :width %>
+        <%= form.text_field :width %>
+    </div>
+
+    <div class="flex product_form_name">
+        <%= form.label :height %>
+        <%= form.text_field :height %>
     </div>
 
 
@@ -19,13 +41,23 @@
         </div>
     </div>
 
+    <div class="options">
+        <% Option.all.each do |option| %>
+        <div class="option">
+            <%= check_box_tag "product[option_ids][]", option.id, @product.option_ids.include?(option.id), id: "#{option.name}" %>
+            <%= label_tag "#{option.name}", option.name %>
+            <%= image_tag(option.image, size: "100x100") if option.image.attached? %>
+        </div>
+        <% end %>
+    </div>
+
     <div class="flex product_form_short_description">
-        <%= form.label :short_description, style: "display: block" %>
+        <%= form.label :short_description %>
         <%= form.text_area :short_description %>
     </div>
 
     <div>
-        <%= form.label :long_description, style: "display: block" %>
+        <%= form.label :long_description%>
         <%= form.rich_text_area :long_description %>
     </div>
 

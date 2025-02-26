@@ -1,7 +1,7 @@
 class OptionsController < ApplicationController
     allow_unauthenticated_access only: %i[ index new create show destroy]
 
-    before_action :set_option, only: %i[ show  destroy] # runs before any action method is executed
+    before_action :set_option, only: %i[ show destroy] # runs before any action method is executed
 
     def index
         @options = Option.all
@@ -28,13 +28,12 @@ class OptionsController < ApplicationController
         @option.destroy
         redirect_to options_path
     end
-      
-    
+
     private
         def set_option
             @option = Option.find(params[:id])
         end
-      
+
         def option_params
             params.require(:option).permit(:name, :width, :height, :image)
         end

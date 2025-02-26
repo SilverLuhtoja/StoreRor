@@ -1,8 +1,9 @@
 class Option < ApplicationRecord
     validates :name, :width, :height, presence: true
     validate :image_presence
-
     has_one_attached :image
+    has_and_belongs_to_many :products
+
 
     # Scopes
     scope :by_name, ->(name) { where(name: name) }
