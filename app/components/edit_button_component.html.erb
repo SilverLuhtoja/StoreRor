@@ -1,0 +1,16 @@
+<style>
+    .btn {
+        background: #EEE;
+        padding: 0.25rem;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+
+
+
+<%= link_to "Edit #{@resource.class}", send("edit_#{@resource.class.name.underscore}_path", @resource), class: "btn" %>

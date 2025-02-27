@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   # allow_unauthenticated_access only: %i[ index show modal]
   # TODO: SWITCH LATER
-  allow_unauthenticated_access only: %i[ index show modal create new]
+  # allow_unauthenticated_access only: %i[ index show modal create new edit update destroy]
+  allow_unauthenticated_access
 
   before_action :set_product, only: %i[ show edit update destroy] # runs before any action method is executed
 
@@ -31,8 +32,10 @@ class ProductsController < ApplicationController
   end
 
   def update
+    option_ids = product_params.delete(:option_ids) || []
     if @product.update(product_params)
-      redirect_to @product
+      @product.update_options_relations(option_ids)
+      redirect_to products_path
     else
       render :edit, status: :unprocessable_entity
     end

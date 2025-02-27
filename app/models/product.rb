@@ -3,4 +3,9 @@ class Product < ApplicationRecord
     has_rich_text :description
     validates :name, :width, :height, presence: true
     has_and_belongs_to_many :options
+
+    def update_options_relations(new_option_ids)
+        self.option_ids = new_option_ids
+        save
+    end
 end
