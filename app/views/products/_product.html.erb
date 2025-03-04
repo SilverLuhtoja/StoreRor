@@ -1,0 +1,24 @@
+<section class="new_product" data-id="<%= product.id %>">
+    <%= link_to product_modal_path(product.id), data: { turbo_frame: "modal" } do %>
+
+    <div class="product_container">
+        <div class="image_container">
+            <%= image_tag "display_shop_item.jpg" %>
+            <%= image_tag "display_shop_hover.jpeg" %>
+        </div>
+        <div class="cart_btn">
+            <h2>$ <%= product.id %></h2>
+        </div>
+
+        <div class="hover_details">
+            <h1>product name</h1>
+            <p> Small product description </p>
+        </div>
+    </div>
+
+    <div class="product_name">
+        <h1><%= product.name %></h1>
+        <h1> More Details!</h1>
+    </div>
+</section>
+<% end %>
