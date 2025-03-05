@@ -11,6 +11,7 @@
 <section id="products">
     <h1>Products</h1>
     <section class="products_wrapper">
+        <%= render "products/product_modal", product: @products[0] %>
         <% @products.each do |product| %>
         <%= render "products/product", product: product %>
         <% end %>

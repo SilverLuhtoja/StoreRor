@@ -41,9 +41,9 @@
         </div>
     </div>
 
-    <div class="options">
+    <div class="form_options">
         <% Option.all.each do |option| %>
-        <div class="option">
+        <div class="form_option">
             <%= check_box_tag "product[option_ids][]", option.id, @product.option_ids.include?(option.id), id: "#{option.name}" %>
             <%= label_tag "#{option.name}", option.name %>
             <%= image_tag(option.image, size: "100x100") if option.image.attached? %>

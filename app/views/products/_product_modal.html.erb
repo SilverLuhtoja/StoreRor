@@ -1,34 +1,50 @@
 <%# originates from data: { turbo_frame: "modal"}, controller: productController#modal%>
 
-<%= turbo_frame_tag :modal do %>
+<%#= turbo_frame_tag :modal do %>
 <div data-controller="modal">
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <div class="images">
-                <img src="<%= asset_path('display_shop_item.jpg') %>" alt="<%= product.name %>">
-            </div>
-            <div class=info>
-                <span class="close" data-action="click->modal#close">&times;</span>
-                <h1><%= product.name %></h1>
-                <h2>$ <%= product.id || product.id %></h2>
-                <p><%= product.description || "Longer product description" %></p>
-
-
+            <div class="left_side">
+                <img class="main_image" src="<%= asset_path('display_shop_item.jpg') %>" alt="<%= product.name %>">
                 <% if product.options.present? %>
-                <% product.options.each do |option| %>
-                <div class="flex">
-                    <%= option.id %>
-                    <%= option.name %>
-                    <%= option.width %>
-                    <%= option.height %>
-                    <%= image_tag option.image if option.image.present? %>
+                <div class="options">
+                    <% product.options.each_with_index  do |option, index| %>
+                    <div class="option <%= 'selected' if index === 0 %>" data-action="click->modal#optionPicked" data-option-id="<%= option.id %>" data-modal-target="option">
+                        <%= image_tag option.image%>
+                        <%= option.name %>
+                        <div class="option_overlay" data-modal-target=" overlay">
+                            <%= image_tag option.image%>
+                        </div>
+                    </div>
+                    <% end %>
                 </div>
                 <% end %>
-                <% end %>
+            </div>
+            <div class=right_side>
+                <span class=" close_btn" data-action="click->modal#close">&times;</span>
+                <div class="header">
+                    <h1><%= product.name %></h1>
+                    <h2>$ <%= product.id || product.id %></h2>
+                </div>
+                <div class="size">
+                    <pre>size:<%= product.width %> x<%= product.height %></pre>
+                </div>
 
-                <button class="addToCartBtn">Add To Cart</button>
+                <%= product.description %>
+                <p><%= product.long_description %></p>
+
+                <p><%= product.description || "Longer product description" %></p>
+                <button class="add_to_cart_btn">Add To Cart</button>
             </div>
         </div>
     </div>
 </div>
-<% end %>
+<%# end %>
+
+<script>
+    options = document.querySelectorAll(".option")
+    options.forEach(element => {
+        console.log(element);
+
+    });
+</script>
