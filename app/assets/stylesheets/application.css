@@ -13,7 +13,7 @@
   box-sizing: border-box;
 
   /* GLOBAL VALUES*/
-  --mobile-font-size: 0.6rem
+  --mobile-font-size: 0.6rem;
 }
 
 body {

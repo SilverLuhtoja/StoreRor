@@ -57,6 +57,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :width, :height, :featured_image, option_ids: [])
+      # TODO: add :decsription if needed
+      params.require(:product).permit(:name, :width, :height, :price, :short_description, :long_description, :featured_image, option_ids: [])
     end
 end

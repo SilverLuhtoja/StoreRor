@@ -7,12 +7,12 @@
             <%= image_tag "display_shop_hover.jpeg" %>
         </div>
         <div class="cart_btn">
-            <h2>$ <%= product.id %></h2>
+            <h2>€ <%= product.price %></h2>
         </div>
 
         <div class="hover_details">
-            <h1>product name</h1>
-            <p> Small product description </p>
+            <h1><%= product.name %></h1>
+            <p><%= product.short_description %></p>
         </div>
     </div>
 

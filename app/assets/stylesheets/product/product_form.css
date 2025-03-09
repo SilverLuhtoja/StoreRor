@@ -1,9 +1,9 @@
 .product_form {
-  background: rgb(150, 150, 150);
+  background: rgb(163, 163, 163);
   padding: 2rem;
 }
 
-label {
+.product_form label {
   font-size: 2rem;
 }
 
@@ -12,12 +12,13 @@ label {
 }
 
 .product_form_name input,
-.product_form_short_description textarea,
 .product_form_featured_image div {
   padding: 0.5rem;
   margin-left: 1rem;
 }
-
+.product_form_name label {
+  width: 10rem;
+}
 .image_drop_box {
   width: 10rem;
   height: 10rem;
@@ -29,15 +30,42 @@ label {
   background: white;
 }
 
-
-.product_create_btn input{
-    padding: 1rem;
-    background: rgb(56, 161, 42);
-    color: rgb(0, 0, 0);
-    border: none;
-    margin-top: 0.5rem;
+.product_create_btn input {
+  padding: 1rem;
+  background: rgb(56, 161, 42);
+  color: rgb(0, 0, 0);
+  border: none;
+  margin-top: 0.5rem;
 }
 
-.product_create_btn input:hover{
-    background: rgb(113, 226, 99);
+.product_create_btn input:hover {
+  background: rgb(113, 226, 99);
+}
+
+.product_form div {
+  margin: 1rem;
+}
+
+/* OPTIONS */
+.form_options {
+  display: flex;
+  gap: 1rem;
+}
+
+.form_option {
+  display: flex;
+  padding: 1rem;
+  background: grey;
+}
+
+.form_option_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
 }

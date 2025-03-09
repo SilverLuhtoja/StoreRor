@@ -27,12 +27,17 @@
         <%= form.text_field :height %>
     </div>
 
+    <div class="flex product_form_name">
+        <%= form.label :price %>
+        <%= form.text_field :price %>
+    </div>
+
 
     NEEDS OPTIONS ID for selection options (possibly show which ones are choosen)
     <div class="product_form_featured_image">
         <%= form.label :featured_images, style: "display: block" %>
         <div class="flex">
-            <div id="dropBox" class="image_drop_box" style="border:2px dashed #ccc; padding:20px; text-align:center;">
+            <div id="dropBoxId" class="image_drop_box" style="border:2px dashed #ccc; padding:20px; text-align:center;">
                 <p>Drag and drop images here, or click to select</p>
                 <%= form.file_field :featured_images, accept: "image/*", multiple: true, style: "display:none;" %>
                 <span id="file-info" style="margin-left: 10px;"></span>
@@ -41,32 +46,44 @@
         </div>
     </div>
 
+    <div>
+        <h1>
+            Options
+        </h1>
+    </div>
     <div class="form_options">
         <% Option.all.each do |option| %>
         <div class="form_option">
-            <%= check_box_tag "product[option_ids][]", option.id, @product.option_ids.include?(option.id), id: "#{option.name}" %>
-            <%= label_tag "#{option.name}", option.name %>
-            <%= image_tag(option.image, size: "100x100") if option.image.attached? %>
+            <%= check_box_tag "product[option_ids][]", option.id, @product.option_ids.include?(option.id), id: "#{option.name}", class: "checkbox" %>
+            <div class="form_option_content">
+                <%= image_tag(option.image, size: "100x100") if option.image.attached? %>
+                <%= label_tag "#{option.name}", option.name %>
+                <%= "#{option.width} x #{option.height}" %>
+            </div>
         </div>
         <% end %>
     </div>
 
-    <div class="flex product_form_short_description">
+    <div class="description">
         <%= form.label :short_description %>
-        <%= form.text_area :short_description %>
+        <div>
+            <%= form.text_area :short_description, style:"width: 40rem; height:5rem"%>
+        </div>
     </div>
 
-    <div>
+    <div class="description">
         <%= form.label :long_description%>
-        <%= form.rich_text_area :long_description %>
+        <div>
+            <%= form.text_area :long_description , style:"width: 40rem; height:10rem"%>
+        </div>
     </div>
 
-
-    <div class="product_create_btn">
-        <button>
-            IMPLEMENT PREVIEW WINDOW (MODAL WINDOW)
-        </button>
+    <% if false %>
+    <div>
+        <%= form.label :description%>
+        <%= form.rich_text_area :description %>
     </div>
+    <% end %>
 
     <div class="product_create_btn">
         <%= form.submit %>
@@ -75,7 +92,7 @@
 </div>
 
 <script>
-    const dropBox = document.getElementById('dropBox');
+    const dropBox = document.getElementById('dropBoxId');
     const fileInput = dropBox.querySelector('input[type="file"]');
     const fileInfo = document.getElementById('file-info');
     const previewContainer = document.getElementById('preview-container');

@@ -24,16 +24,15 @@
                 <span class=" close_btn" data-action="click->modal#close">&times;</span>
                 <div class="header">
                     <h1><%= product.name %></h1>
-                    <h2>$ <%= product.id || product.id %></h2>
+                    <h2>€ <%= product.price %></h2>
                 </div>
                 <div class="size">
                     <pre>size:<%= product.width %> x<%= product.height %></pre>
                 </div>
 
-                <%= product.description %>
+                <p><%= product.short_description %></p>
                 <p><%= product.long_description %></p>
 
-                <p><%= product.description || "Longer product description" %></p>
                 <button class="add_to_cart_btn">Add To Cart</button>
             </div>
         </div>
