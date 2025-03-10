@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_09_203324) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_10_195823) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -63,6 +63,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_203324) do
     t.integer "option_id", null: false
     t.index ["option_id"], name: "index_options_products_on_option_id"
     t.index ["product_id"], name: "index_options_products_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "option_id"
+    t.string "email"
+    t.string "delivery_place"
+    t.string "payment_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
